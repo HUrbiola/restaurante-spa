@@ -1,0 +1,64 @@
+
+$primary: #c0392b;
+$accent: #f5b041;
+$bg: #faf7f5;
+$card-bg: #fff;
+$muted: #6c757d;
+$radius: 12px;
+
+@mixin card-shadow {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+  border-radius: $radius;
+  background: $card-bg;
+}
+
+body {
+  font-family: Inter, system-ui;
+  background: $bg;
+  margin: 0;
+}
+
+.app-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 1rem;
+}
+
+header.site-header {
+  @include card-shadow;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.sidebar {
+  @include card-shadow;
+  padding: 1rem;
+}
+
+.table-wrap {
+  @include card-shadow;
+  padding: 1rem;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.menu-card {
+  @include card-shadow;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+@media (max-width: 880px) {
+  .app-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

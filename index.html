@@ -1,0 +1,79 @@
+
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurante SPA</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="text-center p-3 bg-dark text-white">
+    <h1>🍽️ Restaurante SPA</h1>
+  </header>
+
+  <main class="container my-4">
+    <section id="formulario" class="mb-4">
+      <h2>Agregar Plato</h2>
+      <form id="platoForm" class="row g-3">
+        <div class="col-md-6">
+          <label for="nombre" class="form-label">Nombre del plato</label>
+          <input type="text" class="form-control" id="nombre" required>
+        </div>
+        <div class="col-md-6">
+          <label for="descripcion" class="form-label">Descripción</label>
+          <input type="text" class="form-control" id="descripcion" required>
+        </div>
+        <div class="col-md-4">
+          <label for="precio" class="form-label">Precio (S/.)</label>
+          <input type="number" class="form-control" id="precio" required>
+        </div>
+        <div class="col-md-4">
+          <label for="categoria" class="form-label">Categoría</label>
+          <select id="categoria" class="form-select" required>
+            <option value="Entrada">Entrada</option>
+            <option value="Plato principal">Plato principal</option>
+            <option value="Bebida">Bebida</option>
+            <option value="Postre">Postre</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <label for="disponibilidad" class="form-label">Disponibilidad</label>
+          <select id="disponibilidad" class="form-select" required>
+            <option value="Disponible">Disponible</option>
+            <option value="No disponible">No disponible</option>
+          </select>
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Agregar</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="tablaPlatos">
+      <h2>Menú</h2>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+            <th>Categoría</th>
+            <th>Disponibilidad</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="platosBody"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer class="text-center p-3 bg-dark text-white">
+    <p>&copy; 2025 Restaurante SPA</p>
+  </footer>
+
+  <script src="app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
